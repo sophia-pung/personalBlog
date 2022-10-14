@@ -1,0 +1,20 @@
+.users {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: [first] 300px [line2] 300px;
+    /* grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px;  */
+    column-gap: 10px;
+    row-gap: 15px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    border: 1px solid red;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    gap: 10px;
+    /* background-color: blue; */
+};
+
+.mainuser {
+    border: 10px solid blue;
+    background-color: red;
+  }
