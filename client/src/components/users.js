@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Form from "./form";
 import "./users.css";
+import { useNavigate } from "react-router-dom";
 //import Contact  from "./contact";
 //import EditForm from "./editform";
 
@@ -77,15 +78,25 @@ function Users() {
   };
 
   console.log("contactshere", contacts[0]);
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = "/blogposts"; 
+    navigate(path);
+  }
   return (
     <div className="contacts">
-      <div className="users">
+      <div className="users1">
         {contacts.map((contact, index) => {
           return (
-            <div className="mainuser" key={index}>
+            <div className="users" key={index}>
               {/* each thing inside map is an object */}
-              <span style={{ fontWeight: 'bold' }}>Name: </span>{contact.name} <span style={{ fontWeight: 'bold' }}>Email: </span>{contact.email}
-              <button>Blog Posts</button>
+              <div className="name">
+              <span style={{ fontWeight: 'bold' }}>Name: </span>{contact.name} 
+              </div>
+              <div>
+              <span style={{ fontWeight: 'bold' }}>Email: </span>{contact.email}
+              </div>
+              <button onClick={routeChange}>Blog Posts</button>
             </div>
           );
         })}
